@@ -1,0 +1,32 @@
+import java.util.concurrent.ThreadLocalRandom;
+
+/**
+ * RandomNumber Generation and appending with a string.
+ * 
+ * @author Karthik
+ *
+ */
+public class RandomNumber {
+
+	/**
+	 * Generating random number and appending it with given name.
+	 * 
+	 * @param name
+	 * @return
+	 */
+	public static StringBuilder generateRandomNum(StringBuilder name) {
+
+		int generatedRandomNumber = ThreadLocalRandom.current().nextInt(6,
+				15 + 1);
+		return name.append(" ").append(generatedRandomNumber);
+	}
+
+	/**
+	 * Main method for testing application.
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		System.out.println(generateRandomNum(new StringBuilder("Rahul")));
+	}
+}
